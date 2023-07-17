@@ -1,0 +1,43 @@
+@import "../mixins";
+@import "../variables";
+.egova-mf-layout {
+    @include flex(column);
+    @include size;
+    .egova-mf-layout__header {
+        padding: 20px 20px 0;
+        background: $white;
+        border-radius: $border-radius-4;
+    }
+    .egova-mf-layout__operate {
+        @include flex(row, start, center);
+        height: 50px;
+        background: $white;
+        border-radius: $border-radius-4;
+        margin-top: 10px;
+        padding-left: 20px;
+        width: 100%;
+    }
+    .egova-mf-layout__content {
+        @include flex(column);
+        flex: 1;
+        width: 100%;
+        background: $white;
+        border-radius: $border-radius-4;
+        margin-top: 10px;
+        padding: 20px;
+        .egova-mf-layout__table {
+            flex: 1;
+            width: 100%;
+        }
+        .egova-mf-layout__pager {
+            @include size(100%, 40px);
+            @include flex(row, end, end);
+        }
+    }
+    .ant-checkbox-inner {
+        @include size(16px, 16px);
+    }
+    .egova-mf-cell__text {
+        @include ellipsis;
+    }
+}

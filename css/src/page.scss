@@ -1,0 +1,48 @@
+@import "../mixins";
+@import "../variables";
+.egova-mf-page {
+    @include size;
+    @include font;
+    @include flex(column);
+    border-radius: $border-radius-4;
+}
+.egova-mf-page__header {
+    @include size(100%, 60px);
+    @include flex(row, start, center);
+    border-bottom: 0.01rem solid $border-color;
+    padding: 0 20px;
+    line-height: 1;
+    position: relative;
+    .back-btn {
+        @include font(20px, $common-color, $font-bold-weight);
+        @include flex(row, start, center);
+        cursor: pointer;
+
+        > i {
+            @include font(28px, $minor-text-color);
+            &:hover {
+                background-color: $btn-hover-color;
+            }
+            &:active {
+                background-color: $btn-active-color;
+            }
+        }
+
+        > span {
+            margin-left: 10px;
+        }
+    }
+}
+.egova-mf-page__content {
+    flex: 1;
+    width: 100%;
+}
+.egova-mf-page__footer {
+    @include size(100%, 60px);
+    @include flex(row, center, center);
+    background: $bg-btn-color;
+    box-shadow: 0 -0.01rem 0 0 $border-color;
+    .footer--btn {
+        margin: 0 4px;
+    }
+}

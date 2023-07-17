@@ -1,0 +1,73 @@
+$primary: rgba(34, 51, 85, 1) !default;
+$black: #000 !default;
+$white: #fff !default;
+$stripe: #fafafa !default;
+
+// 文字颜色
+$common-color: #223355 !default;
+$minor-text-color: #6b7a99 !default;
+$prompt-text-color: #a8b4c8 !default;
+$label-text-color: #667799 !default;
+
+$subject-color: #3388ff !default;
+$hover-color: #5ca5ff !default;
+$active-color: #2167d9 !default;
+
+$disable-btn-color: #add8ff !default;
+$border-color: #e9ecf2 !default;
+$bg-color: #f1f6fa !default;
+$bg-btn-color: #fafbff !default;
+$delete-color: #ff4433 !default;
+$green-color: #11c79b !default;
+$delete-confirm-color: #ff715d !default;
+
+$btn-hover-color: #f5f7fa !default;
+$btn-active-color: #e9ecf2 !default;
+$scroll-bar-color-hover: #dde1eb !default;
+$content-color: #223355 !default;
+$light-color: #c3cad9 !default;
+
+$font-common-size: 16px !default;
+$font-small-size: 14px !default;
+$font-min-small-size: 12px !default;
+$font-common-weight: 400 !default;
+$font-bold-weight: 600 !default;
+
+// 圆角
+$border-radius-2: 2px !default;
+$border-radius-4: 4px !default;
+
+$border-width-1: 0.01rem !default;
+$border-solid: solid !default;
+
+/* 高度 */
+$height: 36px;
+$largeHeight: 40px;
+$nodeHeight: 40px;
+
+/* 颜色 */
+$--color-primary: #38f !default;
+$--color-neutral: #235 !default;
+$--color-border: #e9ecf2 !default;
+$--color-placeholder: #a8b4c8 !default;
+
+/* 通用圆角 */
+$--border-radius: 4px;
+
+/* 三级字体大小 */
+$ll-font-size-g1: 12px;
+$ll-font-size-g2: 14px;
+$ll-font-size-g3: 16px;
+
+/* 字体 */
+$font-family-pingfang-pingfang-regular: PingFangSC, PingFangSC-Regular, sans-serif;
+$font-family-dinalternate-dinalternate-bold: DINAlternate-Bold, sans-serif;
+$font-family-hiraginosansgb: HiraginoSansGB, HiraginoSansGB-W6, sans-serif;
+$font-family-pingfang-bold: PingFangSC-S0pxibold, sans-serif;
+$font-family-pingfang-medium: PingFangSC-Medium, sans-serif;
+
+/* 阴影 */
+$box-shadow: 0 2px 30px 0 rgba(34,51,85,.1) !default;
+
+/* 渐变色 */
+$blue-liner: linear-gradient(90deg, #3388ff 0%, #00a0e9 100%);

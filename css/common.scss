@@ -1,0 +1,18 @@
+@import "./mixins";
+@import "./variables";
+.egova-color--blue {
+    color: $subject-color;
+}
+.egova-color--pink {
+    color: $delete-color;
+}
+.egova-color--green {
+    color: $green-color;
+}
+.egova-color--text {
+    color: $common-color;
+}
+[class^="mf-icon-"],
+[class*=" mf-icon-"] {
+    font-size: 16px !important;
+}

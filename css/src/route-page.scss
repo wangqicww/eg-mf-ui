@@ -1,0 +1,28 @@
+@import "../mixins";
+@import "../variables";
+.egova-mf-route-page {
+  @include size;
+  .detail--header {
+    @include absolute($right: 20px);
+  }
+  .full--content {
+    @include size;
+    @include flex;
+    > section {
+      flex: 1;
+      height: 100%;
+      overflow: auto;
+      padding: 20px;
+    }
+  }
+}
+.egova-mf-route-page--detail {
+  @include absolute(0, 0, 0, 0);
+  background-color: #fff;
+  z-index: 2;
+  .ant-spin-nested-loading,
+  .ant-spin-container {
+    @include size;
+  }
+}
+

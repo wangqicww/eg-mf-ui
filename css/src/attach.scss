@@ -1,0 +1,64 @@
+@import "../mixins";
+@import "../variables";
+.egova-mf-attach--default {
+    @include size(200px, 56px);
+    @include border;
+    @include flex($align-items: center);
+    @include font($font-small-size, $minor-text-color);
+    border-radius: $border-radius-2;
+    position: relative;
+}
+.egova-mf-attach--big {
+    @include size(280px, 56px);
+    @include border;
+    @include flex($align-items: center);
+    @include font($font-small-size, $minor-text-color);
+    border-radius: $border-radius-2;
+    position: relative;
+}
+.egova-mf-attach-big__img {
+    @include size(54px, 100%);
+    object-fit: contain;
+}
+.egova-mf-attach__img {
+    @include size(29px, 34px);
+    object-fit: contain;
+    margin-left: 10px;
+}
+.egova-mf-attach-big__name {
+    @include ellipsis;
+    max-width: 150px;
+    margin-left: 10px;
+}
+.egova-mf-attach__content {
+    @include flex(column, center);
+    margin-left: 10px;
+    line-height: 1.5;
+    .egova-mf-attach__name {
+        @include ellipsis;
+        max-width: 80px;
+    }
+    .egova-mf-attach__size {
+        @include font($font-min-small-size, $light-color);
+    }
+}
+.egova-mf-attach__btn {
+    @include flex($align-items: center);
+    @include absolute($right: 10px);
+    > i {
+        cursor: pointer;
+        margin-right: 10px;
+    }
+}
+.egova-mf-attach__group {
+    &.egova-mf-attach--inline {
+        @include flex($wrap: wrap);
+        .egova-mf-attach {
+            margin-right: 20px;
+            margin-bottom: 10px;
+        }
+    }
+    .egova-mf-attach {
+        margin-bottom: 10px;
+    }
+}

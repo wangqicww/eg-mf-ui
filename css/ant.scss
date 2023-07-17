@@ -1,0 +1,372 @@
+@import "./mixins";
+@import "./variables";
+
+.mf-ui {
+  // 文字提示样式
+  &.ant-tooltip {
+    max-width: 500px;
+  }
+  .ant-tooltip-inner {
+    @include border($borderColor: $white);
+    @include font($fontSize: $font-small-size, $fontColor: $common-color);
+    background: $white;
+    box-shadow: 0 2px 10px 0 #2353;
+  }
+  .ant-tooltip-arrow::before {
+    background-color: $white;
+  }
+
+  // 表格样式
+  .ant-table-content {
+    font-size: 16px;
+  }
+  .ant-table-thead > tr > th {
+    position: relative;
+    padding: 9px 12px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #235;
+    background-color: #fafbff;
+    border-top: 1px solid #e9ecf2;
+    border-bottom: 1px solid #e9ecf2;
+  }
+  .ant-table-tbody > tr > td {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #235;
+    border-bottom: 1px solid #e9ecf2;
+  }
+  .ant-table-tbody > tr.ant-table-row-selected td {
+    background: rgba(51, 136, 255, 0.1);
+    border-bottom: 1px solid #fff;
+  }
+  .ant-table-tbody > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td {
+    background: rgba(51, 136, 255, 0.05);
+  }
+  .ant-table-thead > tr > th:not(:last-child)::after {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    display: inline-block;
+    height: 35%;
+    border-left: 1px solid #e4e4e4;
+    content: "";
+    transform: translateY(-50%);
+  }
+  .ant-pagination {
+    height: $height;
+    margin: 20px 0;
+
+    .ant-pagination-item {
+      border: 1px solid $--color-border;
+
+      a {
+        color: $--color-neutral;
+      }
+
+      &:hover {
+        border: 1px solid $--color-primary;
+
+        a {
+          color: $--color-primary;
+        }
+      }
+    }
+
+    .ant-pagination-item-active {
+      background-color: $--color-primary;
+      border: 1px solid $--color-primary;
+
+      a {
+        color: #fff;
+      }
+
+      &:hover {
+        a {
+          color: #fff;
+        }
+      }
+    }
+
+    .ant-pagination-prev,
+    .ant-pagination-item {
+      margin-right: 10px;
+    }
+
+    .ant-pagination-prev,
+    .ant-pagination-next {
+      .ant-pagination-item-link {
+        border: 1px solid $--color-border;
+      }
+
+      &:hover:not(.ant-pagination-disabled) {
+        .ant-pagination-item-link {
+          border: 1px solid $--color-primary;
+        }
+      }
+    }
+
+    .ant-select-selection {
+      border: 1px solid $--color-border;
+
+      &:hover {
+        border: 1px solid $--color-primary;
+      }
+
+      .ant-select-arrow {
+        i {
+          display: none;
+        }
+
+        // TODO 下拉
+        background-size: 16px 16px;
+        width: 16px;
+        height: 16px;
+        margin-top: -8px;
+        right: 6px;
+      }
+    }
+
+    .ant-pagination-item-ellipsis {
+      color: $--color-neutral;
+      font-size: 0;
+      border: 1px solid $--color-border;
+      border-radius: $--border-radius;
+
+      &::after {
+        content: "...";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-family: $font-family-pingfang-pingfang-regular;
+        font-weight: 400;
+        font-size: 16px;
+        color: $--color-neutral;
+      }
+    }
+
+    .ant-pagination-item,
+    .ant-pagination-prev .ant-pagination-item-link,
+    .ant-pagination-next .ant-pagination-item-link,
+    .ant-pagination-prev,
+    .ant-pagination-next,
+    .ant-pagination-jump-prev,
+    .ant-pagination-jump-next,
+    .ant-select-selection {
+      border-radius: $--border-radius;
+      min-width: 32px;
+      height: 32px;
+      line-height: 32px;
+      color: $--color-neutral;
+      font-family: $font-family-pingfang-pingfang-regular;
+      font-weight: 400;
+      font-size: 16px;
+    }
+
+    .ant-pagination-options-quick-jumper {
+      height: 32px;
+      line-height: 32px;
+      color: $--color-neutral;
+      font-family: $font-family-pingfang-pingfang-regular;
+      font-weight: 400;
+      font-size: 16px;
+    }
+
+    .ant-pagination-options {
+      margin-left: 10px;
+    }
+
+    .ant-pagination-options-quick-jumper input {
+      border-radius: $--border-radius;
+      height: 32px;
+      line-height: 32px;
+      border: 1px solid $--color-border;
+      font-family: $font-family-pingfang-pingfang-regular;
+      font-weight: 400;
+      font-size: 16px;
+
+      &:hover {
+        border: 1px solid $--color-primary;
+      }
+    }
+
+    .ant-pagination-total-text {
+      color: $--color-primary;
+      font-weight: 600;
+      height: 32px;
+      line-height: 32px;
+      font-size: 18px;
+      margin-right: 10px;
+
+      &::before {
+        content: "\5171\00A0";
+        color: $--color-neutral;
+        font-weight: 500;
+        font-size: 16px;
+      }
+
+      &::after {
+        content: "\00A0\6761";
+        color: $--color-neutral;
+        font-weight: 500;
+        font-size: 16px;
+      }
+    }
+
+    .ant-table-tbody > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td {
+      background-color: #f3fbfe;
+    }
+
+    .ant-select-selection__rendered {
+      line-height: 32px !important;
+      margin-right: 11px !important;
+      margin-left: 11px !important;
+    }
+
+    .ant-select-selection--single .ant-select-arrow {
+      display: none;
+    }
+    .ant-spin-container {
+      @include size;
+      @include flex(column, start, end);
+      .ant-table {
+        flex: 1;
+        width: 100%;
+        overflow-y: hidden;
+      }
+      .ant-table-content,
+      .ant-table-scroll {
+        overflow-y: hidden;
+      }
+      .ant-pagination {
+        margin-bottom: 0;
+      }
+    }
+    .ant-checkbox-inner {
+      @include size(16px, 16px);
+    }
+    .egova-mf-cell__text {
+      @include ellipsis;
+    }
+  }
+
+  // 按钮
+  &.ant-btn {
+    height: 30px;
+    line-height: 1;
+    border: 1px solid $scroll-bar-color-hover;
+    border-radius: $border-radius-2;
+    font-size: 16px;
+    padding: 0 20px;
+    &:hover {
+      background: rgba(51, 136, 255, 0.05);
+      border: 1px solid $subject-color;
+      color: $common-color;
+    }
+    &:active {
+      background: $disable-btn-color;
+      border: 1px solid $subject-color;
+    }
+  }
+  &.ant-btn-primary {
+    border: 1px solid $subject-color;
+    background-color: $subject-color;
+    &:hover {
+      background: $hover-color;
+      border: 1px solid $hover-color;
+      color: $white;
+    }
+    &:active {
+      border: 1px solid $active-color;
+      background: $active-color;
+    }
+  }
+
+  .ant-select {
+    height: 30px;
+    .ant-select-selection {
+      height: 30px;
+      border: 1px solid $--color-border;
+      border-radius: $border-radius-2;
+    }
+  }
+
+  &.mf-time-range-picker {
+    width: 390px !important;
+    .ant-input {
+      width: 390px;
+    }
+  }
+
+  .ant-form-explain {
+    font-size: 12px;
+  }
+
+  .ant-select-selection-selected-value {
+    line-height: 30px;
+  }
+  .ant-select-selection__rendered {
+    line-height: 30px;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .ant-input {
+    padding: 0 10px;
+    border-radius: 2px;
+  }
+
+  &.mf-form-item--height {
+    .ant-form-item-control {
+      height: 30px;
+    }
+    .ant-form-item-children {
+      @include size;
+      display: block;
+    }
+    .ant-select-selection__placeholder, .ant-select-search__field__placeholder {
+      color: $prompt-text-color;
+    }
+  }
+}
+
+// 无数据样式
+.ant-empty {
+  @include flex(row, center, center);
+}
+.ant-empty-image {
+  display: none;
+}
+.ant-empty-description {
+  @include font(16px, $--color-placeholder);
+  text-align: center;
+  &:before {
+    @include size(70px, 70px);
+    @include bg-img("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAI4AAACSCAMAAACkNwLaAAAARVBMVEUAAABLac1GY8ZKaMtJZ8tKaMtRbspJZ8pMaMtJZspJasxKZ8hLacxKZ8xMas1KaMxLaMxLZ8xLactLacxMas1KaMtKacsd4sU1AAAAF3RSTlMAMxl/iYQHZw2SOhQsSyl0bVFdJB9VRKfDlM0AAAbeSURBVHjazJjrkqMgEIVpmgYKvEWM7/+ou2V0mxkykbRuxu9nKlKNfTl9VL+ITepKTHd1JWb06jpYZxp1HToip66DIyRQV2EmROq1ugYt4V+ov0Kz28YZXCC8afWr2OY2EOGGQTf/ZkR6dmTwH2TwDlb9JrpFwgfGNRcYhtGt8YSjqa/n5TH3JWGNPA7dtKMb+noGN7agf4jKD4RmVkJ8cGgMvYsx6OaongGEg7CE7YxkUIYxeIvPJTQI1W4weATTB1XSohbKC20z4l2I1gfHMi9pVALWHkBD6NoATT0QZrcl2bgiYR6UgNE87ueCl7QAOKIlniF7XE9i6X1E08sHefOoPOMsp98pGeFx1OiVHHt7HNKqlQ5J1lRxERdzt8d3LURKjzPvhtA4yaazlLHhFjiUclrTFVskNwluOBEiEhehjfodov/aECZst+y9/FLd1iUJ3qXzedbNVsEpiIQKl8LZuhMkTFv5GK4eZa2orSg7YgogIaT8ajd1AGd4XESQovMB5pWYCRG3CWEbEGOL00Tk94kgR+fvWtVRlpfvibPdgZwuq0SsVStIxbrGhezhCD4r5lbVMYRCyrmQNTDiZr8ZROrrejzRt81VL5eZi0KWF3MixMqvFn4gatUKzy2MnKsD6G07rhTANBAi3WNW2csv67MJjtHlN9R7PQWDeWwAxLLfLZtFs/7hKH4VLtbRV4YuuCWteG8irxas5RqYQ8U8EiINVfL09dtP7Im7soOjrOa3YR3doSXsiqVUcyEfJG4NwyvCSzyO3z4kIrlVu+A4iXWH+lizh8J39TTAQ+ekYtZ87g6TVkx+iwgnEHT51p/j5zaLpMxxAuZwMcPe6PGDMZi+ObVsR/ZwDr7o2KeAyYs9nw+snmeQinn2lPAlnHJ6NnAOjS2m/TNiXyRrPm/oMCGyFr7S0di2k8qxLnsiwVl0+YCNqgZ+n1QzdOSjZ37HmPPWpgOcxlRsmZXec1c95cXMO3gNvPFzIZ+cLcsOpdp7snqeSBL4UYn3lPvR497zo37U9nvq+VE/CiRSz/P9KE8FYu95MlMx2X6knJkNnE6mo9SoXYLAe0r86I6OVnvPD/lRufeU62hQO9R6Tzm6zo/Kvad8hae0V8gC9ZT50R0dLb1ngP9B6Kr96JQXWNR1NLCi64iFzy0pIq6n4+Wqkio/yt7zM+GEndHD3vMj4UTc8aPsPT8Rjhpf+VH2np8KJ/1p31y3GwWBAMxthlnwlkB8/0ddQ9KMHqLBNFH3nP1+tKe21a8UBhhGPbsf5ROn2hWiZnTIFdLrpYNNtKAHoBRdPdUJK+6Q8HNpd70KsJnOvUcUs7SEb4xeCeY6qY1XYU5LOmva2U+2Yg3HrtK7vNaxRXRJJ9wE8oWM7mwRr3SgI3wNIXWjEOaldFKqcawlLIDwbF7piJfkKTVUIdJ4JjqLMl7roChCAofMmesFfKx1sH26kaQWeE2wjQ73kWzGIWt4e7mdDg/oNgpGdSZd8xvrcBAHXdMjea+BV3ib6vCQ1kafXRUqd9YGOBOwpQ6vABLAJXlss72OcBr0FIBe7KYjogUYy5iuETvqCJQWTFICMNA5FLvoMBh62w46re0DCbGjDoOE6fNBdAb+6/yjOkh0FB30sankEXSQfKw4o7SnDpIKN5Xho9q175CPj71WGKTCfl2ZVGikk3eiD1I2uLEO/38k46QixfutzXR4/ExQSA3bbKtD0skRrlIo4s1qlzBIcsRVhip39Yo7RWWayGCQiWa3SYKqh4zwWT5uh5FVXWUmJfC05xSKwePkYMfvP6NTw0N99wUGxqyE4FM64aqjUazBOynf68ZcoVsvHNdoWqcj5ZvdmM9A+oWTPh3fbB0S61Ea5sup0bLrCh0V3DvdmGsI40K+z9iVOiqdb0exjpJaAwksW4hPrRIa8Ys3eAq/XQ7im2+FLFcQnvh4bQOUHmcXEWd+oCWxBWgnOd/GzTSPsSg24GL0OI9ddyKDUuiBM4lvg8mGa2bC04OkRl8xnRLfxVszrhOKtR64BMzToZye/Rac8j3/fN2m+fISn46+AdOeKhTfAEPd3p9h6XGxBrBePMFBMgcDrT3XC5zmqBe42BYM6PxNXDt3JlppoxMA5s6fX2N+AHikfFGMkLPhV1ljgF0+DgyYrsqmmxxEIk++b/kP+iDc1voUyRMhLqWsvLrjlbPa/PkS2vaBH0WEuYr3aoL3QfaXs/04l9o1j4exE45d1DM8/9b7lN/1bkTqKFDq0cfBC6GOBApUx4GO1HkIs7G1F54wD4JbkwfCzGlLKc8m8yDS17RYI5+virzID3zCYICuoPg9mKAbPvHi0Z7o/viEKOMvL7mKrZrBbNoAAAAASUVORK5CYII=");
+    display: block;
+    margin-bottom: 10px;
+    content: "";
+  }
+}
+textarea::placeholder, input::placeholder {
+  color: #a8b4c8 !important;
+}
+
+.ant-popover-inner-content {
+  padding: 10px 0;
+  .mf-tree__btn {
+    @include font;
+    line-height: 40px;
+    cursor: pointer;
+    width: 100%;
+    padding: 0 20px;
+    min-width: 100px;
+    &:hover {
+      background: rgba(51,136,255,.1);
+    }
+  }
+}

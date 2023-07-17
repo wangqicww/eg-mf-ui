@@ -1,0 +1,60 @@
+@import "../mixins";
+@import "../variables";
+.egova-mf-progress {
+  .egova-mf-desc-item__label {
+    width: 80px !important;
+  }
+  .egova-mf-desc__content {
+    padding-left: 0;
+  }
+}
+.egova-mf-progress__step {
+  margin-bottom: 4px;
+  padding: 0 15px;
+  position: relative;
+}
+.egova-mf-progress__arrow {
+  color: $border-color;
+  position: relative;
+  height: 12px;
+  > i {
+    position: absolute;
+    bottom: -4px;
+    transform: translate(calc(-50% + 1px)) rotate(180deg);
+  }
+}
+.egova-mf-progress__line {
+  height: 20px;
+  border-left: 2px solid $border-color;
+}
+.egova-mf-progress-item:last-child {
+  .egova-mf-progress-item__content {
+    border-left-color: transparent;
+  }
+}
+.egova-mf-progress-item__top {
+  @include flex(row, start, center);
+  height: 30px;
+  margin-bottom: 10px;
+  position: relative;
+}
+.egova-mf-progress-item__index {
+  @include size(30px, 30px);
+  @include bg-img("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAMAAACdt4HsAAAAqFBMVEUAnv8AAAAAmv8Alf8UpP8AnP8tsf8srv9jx/8nrP9oyf8nrP9sy/8rrv8ur/9Zw/8mrP9Euf9Xw/8qr/8/t/9Ov/8krP80sv9exf8rrv9aw/9pyf9Qvv88tv9nyP82tP9Svv9uzP85tP9Lu/9hxf9Guv8hqf9lx/9fxf8eqf9Nvf8+tv9Huv9Zwv9ixv9AuP86tP9SwP8tr/9Ovf8zsv9pyf8nrP9uzP8AJdY9AAAALHRSTlMaABYMIAc4L/Hw0Kzk5M2Xl4l/f2RTU/Ll1NGsrKyVlPfz5eGrmYmGZGTt0dMQSKAAAAKbSURBVFjDtZfpViIxEIXLpMOO7AjI4jrqDIxg0/j+bzYp6TFVFcrDMcf7g8OP/m7dTtJJBS4UOWetMQbA/1jrnPYcnKY9C0zexZ1tYAPMTaxioOK6hW7gJC4tnGIg8PMtgPFwlpxmYOFMWWrA+G84AOW/4wA6n+GIeeFf3QE0PjPWGsi8AP9lmgMo429sNupfN1q1Wqvx0B9l8fJy1MBFeGXZePcqiuIvatapRBaOGBgRr9q5fS95NEDVOlUrqgQDJ/jnFsNRm81mMrQnIkAUwJinTxz5AvGjesZEEUDOgMmuKY7alNrt5pmRMwFRAMYXjL/ZzaMIIALYJ6X+DpXnPSsiAAuQ2WcdRz5fD23GIgCbAlNt/eeLiEd8vb6vGjYRwN7ALvnkSR71yABvQAxN5VaWRx1x5FG/K5S4AGfICCyPvMBRHi/1uiKjYBw4ugQaPL4sj/j69Q9dDA4sCTAKk0/LE/xDYxLBMoN+icd8Hgy22wEzoCPyIGc/Lo8GC8pQA2gEnPF5MNh6XQaC4SabCDyuv0Xd0VFkBrVgoJVHXX1l8HV51H6vG0zY25P6BPdqMwP6f6asvQ998m9sENk0zkX8nOCBf2tShi8kGl8p7zVQV+KoxHdy9AOPYkuZf0wzZfQZP2UfE/+cOyK+xFGHLvucxYZygwYUj/l6hRJyS3sMr6/why4Dok31XsSX+KEtNlW5rQ8jfo864qgXua3Lg6Un43P+F3/61NG20OKjmvzZ04frguLI7wMvDlfleO9xvsQxvzje1QZjeHcqfv0lajD0Fmd1Fcp7Id5VWhytyVpNKT7tqk2W3uaNB83Ldr3evmwOxkqbl9Ropra6ic22SW33Uy8cqVee1EtX4rUv8eKZePX9ict38vX/HyTr7oF94xGGAAAAAElFTkSuQmCC");
+  @include font(12px, $white);
+  text-align: center;
+  line-height: 30px;
+}
+.gova-mf-progress-item__name {
+  @include font-height(30px);
+  @include font(16px, #fff);
+  margin-left: 16px;
+  padding: 0 20px;
+  border-radius: 0 15px 15px 0;
+  background-image: linear-gradient(90deg, #3388FF 0%, #24AAFF 100%);
+}
+.egova-mf-progress-item__content {
+  padding: 0 0 0 30px;
+  border-left: 2px solid $border-color;
+  margin: 0 15px 15px;
+}

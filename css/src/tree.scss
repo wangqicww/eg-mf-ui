@@ -1,0 +1,166 @@
+@import "../mixins";
+@import "../variables";
+.mf-ui.ant-tree {
+  position: relative
+}
+
+.mf-ui.ant-tree li.ant-tree-treenode-loading span.ant-tree-switcher.ant-tree-switcher_close .ant-tree-switcher-loading-icon,.mf-ui.ant-tree li.ant-tree-treenode-loading span.ant-tree-switcher.ant-tree-switcher_open .ant-tree-switcher-loading-icon {
+  position: static
+}
+
+.mf-ui.ant-tree li {
+  padding: 1px 0
+}
+
+.mf-ui.ant-tree .ant-tree-child-tree>li:first-child {
+  padding-top: 2px
+}
+
+.mf-ui.ant-tree.ant-tree .ant-tree-title,.mf-ui.ant-tree.ant-tree li .ant-tree-node-content-wrapper,.mf-ui.ant-tree.ant-tree li span.ant-tree-iconEle {
+  height: 40px;
+  line-height: 40px
+}
+
+.mf-ui.ant-tree .ant-tree-switcher {
+  display: inline-block;
+  height: 40px;
+  margin-left: 10px;
+  line-height: 45px;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box
+}
+
+.mf-ui.ant-tree .ant-tree-switcher:after {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  content: "";
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  -webkit-transition: -webkit-transform .2s ease-in-out;
+  transition: -webkit-transform .2s ease-in-out;
+  transition: transform .2s ease-in-out;
+  transition: transform .2s ease-in-out,-webkit-transform .2s ease-in-out
+}
+
+.mf-ui.ant-tree .ant-tree-switcher.ant-tree-switcher_close:after {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJ1BMVEUkMVUiM1UgMFYAAAAiM1UiM1UjM1ZAQEAiM1UiM1UjNVgXLl0cOVU257RrAAAADXRSTlMV3Q8A9NokBP7iHQsJ7Is8XQAAAFFJREFUCNdjMGIAA2UG1amCooGCkUEMjEkMbAkMagIMrMzFikLmBgEMjMzFKk7mBgJIDB7tJV6bDgDVJLp4tLiIBcAZcCkMXQgD4VbALYU7AwDERBgtRo0FyAAAAABJRU5ErkJggg==);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%
+}
+
+.mf-ui.ant-tree .ant-tree-switcher.ant-tree-switcher_open:after {
+  -webkit-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAIVBMVEUkMVYAAAAiM1UiM1UiM1UgMFAiM1UiM1YiM1UiM1UcOVXANVDUAAAAC3RSTlMUANz0DxDYJeLfCQjIxXcAAAA/SURBVAjXYxBlAINAhrAmJSDQSGVgKgEJuCswMDEKAoEAVgZXiIuL6wIFBrZKYyCYngBnwKTwaYdbAbcU7gwA5NoRiUeZ9K4AAAAASUVORK5CYII=);
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%
+}
+
+.mf-ui.ant-tree .ant-tree-switcher .ant-tree-switcher-icon {
+  display: none!important
+}
+
+.mf-ui.ant-tree .ant-tree-checkbox {
+  position: relative;
+  top: 16px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%)
+}
+
+.mf-ui.ant-tree.ant-tree li .ant-tree-node-content-wrapper.ant-tree-node-selected {
+  background-color: unset;
+  .ant-tree-title {
+    color: $subject-color;
+  }
+}
+.mf-ui.ant-tree li .ant-tree-node-content-wrapper .ant-tree-iconEle {
+  width: 16px;
+  margin-right: 6px;
+  color: $subject-color;
+}
+
+.mf-ui.ant-tree .ant-tree-title {
+  font-size: 16px;
+  color: #235;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: calc(100% - 40px);
+  position: relative;
+}
+
+.mf-ui.ant-tree .ant-tree-node-content-wrapper {
+  width: calc(100% - 24px)
+}
+
+.mf-ui.ant-tree .ant-tree-node-content-wrapper:after,.mf-ui.ant-tree .ant-tree-node-content-wrapper:before {
+  position: absolute;
+  right: 0;
+  left: 0;
+  display: inline-block;
+  width: 0;
+  height: 40px;
+  pointer-events: none;
+  content: "";
+  -webkit-transition: width .2s ease-in-out;
+  transition: width .2s ease-in-out
+}
+
+.mf-ui.ant-tree .ant-tree-node-content-wrapper.ant-tree-node-selected:after {
+  width: 100%;
+  background-color: rgba(51,136,255,.1)
+}
+
+.mf-ui.ant-tree .ant-tree-node-content-wrapper.ant-tree-node-selected:before {
+  right: 0;
+  left: unset;
+  width: 4px;
+  background-color: $subject-color;
+}
+
+.mf-ui.ant-tree .ant-tree-node-content-wrapper:not(.ant-tree-node-selected):hover:after {
+  width: 100%;
+  background-color: rgba(146,191,255,.1)
+}
+
+.mf-ui.ant-tree .ant-tree-checkbox+.ant-tree-node-content-wrapper {
+  width: calc(100% - 46px)
+}
+
+.mf-ui.ant-tree.ant-tree li .ant-tree-node-content-wrapper:hover {
+  background-color: unset
+}
+.mf-ui .ant-tree-checkbox-inner {
+  @include size(16px, 16px);
+}
+.mf-ui.ant-tree li span.ant-tree-checkbox {
+  height: 16px;
+  margin: 0 5px;
+  padding: 0;
+}
+.mf-ui .ant-tree-checkbox-checked .ant-tree-checkbox-inner {
+  background-color: $subject-color;
+  border-color: $subject-color;
+}
+.mf-tree__operate {
+  @include absolute($right: 10px, $top: 0);
+  @include flex(row, start, center);
+  height: 100%;
+}
+.mf-operate__btn {
+  @include size(16px, 16px);
+  @include bg-img("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAElBMVEUAAAAziP80hv8kkv8ziP8ziP/cj45+AAAABXRSTlMA1SUHchwtTcYAAAAlSURBVAjXYyANGDMwGwAJBiZBBUUhIMHAEurgGgIk4CJwNeQBAD+VBDByGIj1AAAAAElFTkSuQmCC");
+}
+.mf-ui .tree__text {
+  @include ellipsis;
+  max-width: calc(100% - 40px);
+}

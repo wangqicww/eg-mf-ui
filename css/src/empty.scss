@@ -1,0 +1,19 @@
+@import "../mixins";
+@import "../variables";
+.egova-mf-empty {
+  @include flex(column, center, center);
+  text-align: center;
+  box-sizing: border-box;
+}
+.egova-mf-empty__image {
+  > svg {
+    @include size(80px, 80px);
+  }
+  > img {
+    @include size(80px, 80px);
+  }
+}
+.egova-mf-empty__description {
+  @include font($fontColor: $--color-placeholder);
+  margin-top: 10px;
+}

@@ -1,0 +1,30 @@
+@import "../mixins";
+@import "../variables";
+.egova-mf-upload--accept {
+  @include flex(row, start, center);
+  @include font(16px, $--color-placeholder);
+  height: 40px;
+  padding: 0 20px;
+  margin-top: 12px;
+  background-color: $btn-hover-color;
+
+  > i {
+    @include font(22px, $subject-color);
+  }
+  > span {
+    @include ellipsis;
+    margin-left: 10px;
+  }
+}
+.egova-mf-upload {
+  .egova-mf-attach__group {
+    margin-top: 12px;
+  }
+  .ant-btn {
+    border-radius: $border-radius-2;
+    height: 30px;
+    > span {
+      margin-left: 8px;
+    }
+  }
+}

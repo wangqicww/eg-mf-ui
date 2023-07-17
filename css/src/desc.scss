@@ -1,0 +1,54 @@
+@import "../mixins";
+@import "../variables";
+.egova-mf-desc {
+    @include size;
+    .egova-mf-desc-item {
+        margin-bottom: 18px;
+    }
+    .egova-mf-desc__header {
+        margin-bottom: 20px;
+    }
+    .egova-mf-desc__content {
+        @include flex($wrap: wrap);
+        padding-left: 20px;
+    }
+}
+.egova-mf-desc-1 {
+    .egova-mf-desc-item {
+        width: 100%;
+    }
+}
+.egova-mf-desc-2 {
+    .egova-mf-desc-item {
+        width: 50%;
+    }
+}
+.egova-mf-desc-3 {
+    .egova-mf-desc-item {
+        width: 33.33%;
+    }
+}
+.egova-mf-desc-4 {
+    .egova-mf-desc-item {
+        width: 25%;
+    }
+}
+.egova-mf-desc-item {
+    @include flex;
+    &.is-exclusive-line {
+        width: 100%;
+    }
+    .egova-mf-desc-item__label {
+        @include font($fontColor: $label-text-color);
+        font-size: 16px;
+        &.hide-colon {
+            margin-right: 10px;
+        }
+    }
+    .egova-mf-desc-item__value {
+        @include font;
+        font-size: 16px;
+        flex: 1;
+        text-align: left;
+    }
+}

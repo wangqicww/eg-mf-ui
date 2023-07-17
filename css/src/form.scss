@@ -1,0 +1,76 @@
+@import "../mixins";
+@import "../variables";
+.egova-mf-form {
+  display: flex;
+  .ant-select-selection,
+  .ant-calendar-picker {
+    width: 100%;
+  }
+  .ant-form-inline {
+    @include flex(row, space-between, start, wrap);
+  }
+  .ant-form-inline .ant-form-item {
+    margin-bottom: 20px;
+    margin-right: 0;
+    padding-right: 40px;
+    display: flex;
+  }
+  .ant-form-item-required:before {
+    position: absolute;
+    left: -15px;
+    line-height: 30px;
+  }
+  .ant-form-item-label {
+    line-height: 30px;
+    padding: 0 20px;
+  }
+  .ant-form-item-control-wrapper {
+    flex: 1;
+  }
+  .ant-form-item-label > label {
+    @include ellipsis;
+    @include font;
+    line-height: 30px;
+  }
+  .ant-form-item-control {
+    line-height: 30px;
+  }
+  .ant-form-explain {
+    position: absolute;
+  }
+  .egova-mf-form-col-1 {
+    width: 100%;
+  }
+  .egova-mf-form-col-2 {
+    width: 50%;
+  }
+  .egova-mf-form-col-3 {
+    width: 33.33%;
+  }
+  .egova-mf-form-col-4 {
+    width: 25%;
+  }
+  textarea.ant-input {
+    padding-bottom: 20px;
+  }
+  .ant-btn {
+    border: 1px solid #3388ff;
+    font-size: 16px;
+    color: #3388ff;
+    font-weight: 400;
+    border-radius: 2px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.egova-mf-form--locate {
+  @include flex(row, start, center);
+}
+.egova-mf-btn--content {
+  margin-right: 10px;
+  > i {
+    margin-right: 8px;
+  }
+}

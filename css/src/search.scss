@@ -1,0 +1,55 @@
+@import "../mixins";
+@import "../variables";
+.egova-mf-search {
+    @include flex(row, space-between);
+    .ant-input,
+    .ant-select-selection {
+        @include size(200px, 30px);
+        @include border;
+        font-size: $font-common-size;
+    }
+    .ant-form-inline {
+        .ant-form-item {
+            margin-right: 0;
+            margin-bottom: 20px;
+            height: 30px;
+        }
+    }
+    .ant-form-item-label > label {
+        @include ellipsis;
+        @include font;
+        width: 90px;
+        display: inline-block;
+        line-height: 30px;
+        text-align: left;
+    }
+    .ant-form-item-control {
+        line-height: 30px;
+        margin-right: 40px;
+    }
+}
+.egova-mf-search--collapse {
+    height: 50px;
+    overflow: hidden;
+}
+.egova-mf-search__btn {
+    @include flex(row, end);
+    .egova-mf-search--expand {
+        @include font($fontColor: $subject-color);
+        @include size(70px, 30px);
+        @include flex(row, center, center);
+        cursor: pointer;
+        &:hover {
+            background-color: $btn-hover-color;
+        }
+        &:focus {
+            background-color: $btn-active-color;
+        }
+        > i {
+            margin-left: 6px;
+        }
+    }
+    .ant-btn {
+        margin-left: 10px;
+    }
+}

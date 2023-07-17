@@ -1,0 +1,26 @@
+@import "../mixins";
+@import "../variables";
+.egova-mf-operate {
+    @include flex($align-items: center);
+}
+.egova-mf-operate__btn {
+    @include flex($align-items: center);
+    margin-right: 10px;
+    height: 30px;
+    padding: 0 8px;
+    cursor: pointer;
+    &:hover {
+        background-color: $btn-hover-color;
+    }
+    &:active {
+        background-color: $btn-active-color;
+    }
+}
+.egova-mf-operate__icon {
+    font-size: 16px
+}
+.egova-mf-operate__name {
+    @include font;
+    font-size: 16px;
+    margin-left: 8px;
+}
